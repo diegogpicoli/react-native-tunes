@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import {
   View,
   TextInput,
@@ -9,7 +9,7 @@ import {
 } from "react-native";
 import { MyContext } from "../../Context/auth";
 import { useNavigation } from "@react-navigation/native";
-import { NativeStackNavigationProp, NativeStackScreenProps  } from '@react-navigation/native-stack';
+import { NativeStackNavigationProp  } from '@react-navigation/native-stack';
 
 type RootStackParamList = {
   Tab: undefined;
