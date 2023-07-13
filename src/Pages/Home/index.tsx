@@ -2,7 +2,8 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { View, TextInput, Button, FlatList, StyleSheet, Text, TouchableOpacity, SafeAreaView } from "react-native";
 import Card from "../../Components/card";
-import searchAlbumsAPI, { Album } from "../../utils";
+import { searchAlbumsAPI, Album} from "../../utils";
+import SoundPlayer from 'react-native-sound-player';
 
 interface Item {
   Object: {
@@ -23,9 +24,14 @@ const SearchComponent: React.FC = () => {
     setSearchResults(data);
   };
 
-  useEffect(() => {
-    console.log(searchResults[0]);
-  }, [searchResults]);
+  const playAudio = () => {
+    try {
+      SoundPlayer.playSoundFile('nome_do_arquivo', 'mp3');
+    } catch (error) {
+      console.log('Erro ao reproduzir o áudio:', error);
+    }
+  };
+
 
   return (
     <View>
